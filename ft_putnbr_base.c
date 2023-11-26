@@ -1,45 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 17:06:36 by igama             #+#    #+#             */
-/*   Updated: 2023/11/26 04:19:02 by igama            ###   ########.fr       */
+/*   Created: 2023/11/26 02:05:44 by igama             #+#    #+#             */
+/*   Updated: 2023/11/26 05:38:31 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_putnbr(int n)
+void	ft_putnbr_base(int n)
 {
-	if (n == -2147483648)
+	write(1, "0x", 2);
+	/*if (n == -2147483648)
 		write(1, "-2147483648", 11);
 	if (n < 0 && n > -2147483648)
 	{
 		ft_putchar('-');
 		n = -n;
-	}
+	}*/
 	if (n > 9)
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		ft_putnbr_base(n / 10);
+		ft_putnbr_base(n % 10);
 	}
 	if (n >= 0 && n <= 9)
 		ft_putchar(n + '0');
+	if ((n >= 'a' && n <= 'f') || (n >= 'A' && n <= 'F'))
+		ft_putchar(n);
 }
 
-int	ft_digits(int n)
+int	ft_digits_base(int n)
 {
 	int	n_digits;
 
 	n_digits = 0;
-	ft_putnbr(n);
+	/*ft_putnbr_base(n);
 	if (n == -2147483648)
 		return (11);
 	if (n == 0)
-		return (1);
+		return (1);*/
 	if (n < 0)
 	{
 		n *= -1;
@@ -50,33 +53,5 @@ int	ft_digits(int n)
 		n /= 10;
 		n_digits++;
 	}
-	return (n_digits);
+	return(n_digits);
 }
-
-/*char	*ft_itoa(int n)
-{
-	char	*str;
-	int		size;
-
-	if (n == 0)
-		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	size = digits(n);
-	str = (char *)malloc(sizeof(char) * (size + 1));
-	if (!str)
-		return (0);
-	if (n < 0)
-	{
-		str[0] = '-';
-		n *= -1;
-	}
-	str[size] = '\0';
-	while (n > 0)
-	{
-		str[size - 1] = n % 10 + '0';
-		n /= 10;
-		size--;
-	}
-	return (str);
-}*/

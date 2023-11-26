@@ -2,8 +2,8 @@
 NAME = libftprintf.a
 
 # Function files
-SRCS = ft_printf.c ft_putnbr.c ft_putstr.c ft_putchar.c
-SRCS += ft_putnbr_uns.c ft_strdup.c
+SRCS =  ft_printf.c ft_putnbr.c ft_putstr.c ft_putchar.c
+SRCS += ft_putnbr_uns.c ft_strdup.c ft_putnbr_base.c
 
 # Function Objects
 SRCS_OBJS = $(SRCS:.c=.o)

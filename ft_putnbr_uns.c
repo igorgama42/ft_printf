@@ -5,27 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 20:54:49 by igama             #+#    #+#             */
-/*   Updated: 2023/11/22 22:07:19 by igama            ###   ########.fr       */
+/*   Created: 2023/11/26 03:37:52 by igama             #+#    #+#             */
+/*   Updated: 2023/11/26 03:45:42 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_putnbr_uns(unsigned int n)
+void	ft_putnbr_uns(unsigned int n)
 {
-	int	i;
-
-	i = 0;
 	if (n > 9)
 	{
 		ft_putnbr_uns(n / 10);
 		ft_putnbr_uns(n % 10);
 	}
 	if (n <= 9)
-	{
 		ft_putchar(n + '0');
-		i++;
+}
+
+int	ft_digits_uns(unsigned int n)
+{
+	int	n_digits;
+
+	n_digits = 0;
+	ft_putnbr_uns(n);
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		n /= 10;
+		n_digits++;
 	}
-	return (i);
+	return (n_digits);
 }
