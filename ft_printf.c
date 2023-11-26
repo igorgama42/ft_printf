@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:42:50 by igama             #+#    #+#             */
-/*   Updated: 2023/11/26 05:36:50 by igama            ###   ########.fr       */
+/*   Updated: 2023/11/26 08:27:22 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_format(char c, va_list arguments)
 	else if (c == '%')
 		return (ft_putchar('%'), 1);
 	else if (c == 'p')
-		return (ft_itoa(va_arg(arguments, char *)));
+		return (ft_digits_base(va_arg(arguments, int)));
 	return (0);
 }
 

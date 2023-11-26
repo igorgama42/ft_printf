@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 02:05:44 by igama             #+#    #+#             */
-/*   Updated: 2023/11/26 05:38:31 by igama            ###   ########.fr       */
+/*   Updated: 2023/11/26 08:26:30 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,19 @@
 void	ft_putnbr_base(int n)
 {
 	write(1, "0x", 2);
-	/*if (n == -2147483648)
-		write(1, "-2147483648", 11);
-	if (n < 0 && n > -2147483648)
+	if (n > 15)
 	{
-		ft_putchar('-');
-		n = -n;
-	}*/
-	if (n > 9)
-	{
-		ft_putnbr_base(n / 10);
-		ft_putnbr_base(n % 10);
+		ft_putnbr_base(n / 16);
+		ft_putnbr_base(n % 16);
 	}
 	if (n >= 0 && n <= 9)
+	{
 		ft_putchar(n + '0');
-	if ((n >= 'a' && n <= 'f') || (n >= 'A' && n <= 'F'))
-		ft_putchar(n);
+	}
+	if (n >= 10 && n <= 15)
+	{
+		ft_putchar(n + 'a');
+	}
 }
 
 int	ft_digits_base(int n)
@@ -38,11 +35,6 @@ int	ft_digits_base(int n)
 	int	n_digits;
 
 	n_digits = 0;
-	/*ft_putnbr_base(n);
-	if (n == -2147483648)
-		return (11);
-	if (n == 0)
-		return (1);*/
 	if (n < 0)
 	{
 		n *= -1;
