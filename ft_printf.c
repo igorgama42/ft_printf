@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:42:50 by igama             #+#    #+#             */
-/*   Updated: 2023/11/26 08:27:22 by igama            ###   ########.fr       */
+/*   Updated: 2023/11/26 15:11:43 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ int	ft_format(char c, va_list arguments)
 	else if (c == '%')
 		return (ft_putchar('%'), 1);
 	else if (c == 'p')
-		return (ft_digits_base(va_arg(arguments, int)));
+		return (ft_digits_base(va_arg(arguments, unsigned long int)));
+	else if (c == 'x')
+		return (ft_digits_x(va_arg(arguments, long long int)));
+	else if (c == 'X')
+		return (ft_digits_cx(va_arg(arguments, long long int)));
 	return (0);
 }
 
@@ -58,6 +62,6 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	ft_printf("%i %i", 2147483647, (int)-2147483648);
-	printf("%i %i", 2147483647, (int)-2147483648);
+	ft_printf("%x\n", 23);
+	printf("%x", 23);
 }*/

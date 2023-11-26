@@ -1,48 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_put_cx.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 02:05:44 by igama             #+#    #+#             */
-/*   Updated: 2023/11/26 11:55:41 by igama            ###   ########.fr       */
+/*   Created: 2023/11/26 11:23:03 by igama             #+#    #+#             */
+/*   Updated: 2023/11/26 11:29:40 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_putnbr_base(unsigned long int n)
+void	ft_put_cx(long long int n)
 {
-	char	array[16] = {"0123456789abcdef"};
+	char	array[16] = {"0123456789ABCDEF"};
 
 	if (n > 15)
 	{
-		ft_putnbr_base(n / 16);
-		ft_putnbr_base(n % 16);
+		ft_put_cx(n / 16);
+		ft_put_cx(n % 16);
 	}
-	if (n <= 15)
+	if (n >= 0 && n <= 15)
 		ft_putchar(array[n]);
 }
 
-unsigned long int	ft_digits_base(unsigned long int n)
+long long int	ft_digits_cx(long long int n)
 {
 	int	n_digits;
 
-	if (n == 0)
-		return (write(1, "(nil)", 5));
-	n_digits = 2;
-	write(1, "0x", 2);
-	ft_putnbr_base(n);
-	/*if (n < 0)
+	n_digits = 0;
+	ft_put_cx(n);
+	if (n < 0)
 	{
 		n *= -1;
 		n_digits++;
-	}*/
+	}
 	while (n > 0)
 	{
 		n /= 16;
 		n_digits++;
 	}
+	if (n == 0 && n_digits == 0)
+		return (1);
 	return (n_digits);
 }
