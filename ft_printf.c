@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:42:50 by igama             #+#    #+#             */
-/*   Updated: 2023/11/26 15:11:43 by igama            ###   ########.fr       */
+/*   Updated: 2023/11/27 13:21:04 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,3 @@ int	ft_printf(const char *str, ...)
 	}
 	return (i);
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-	ft_printf("%x\n", 23);
-	printf("%x", 23);
-}*/

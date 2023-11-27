@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 02:05:44 by igama             #+#    #+#             */
-/*   Updated: 2023/11/26 11:55:41 by igama            ###   ########.fr       */
+/*   Updated: 2023/11/27 13:19:54 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_base(unsigned long int n)
 {
-	char	array[16] = {"0123456789abcdef"};
+	const char	array[16] = {"0123456789abcdef"};
 
 	if (n > 15)
 	{
@@ -34,11 +34,6 @@ unsigned long int	ft_digits_base(unsigned long int n)
 	n_digits = 2;
 	write(1, "0x", 2);
 	ft_putnbr_base(n);
-	/*if (n < 0)
-	{
-		n *= -1;
-		n_digits++;
-	}*/
 	while (n > 0)
 	{
 		n /= 16;
