@@ -6,11 +6,11 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:42:50 by igama             #+#    #+#             */
-/*   Updated: 2023/11/27 13:21:04 by igama            ###   ########.fr       */
+/*   Updated: 2023/11/28 08:58:00 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_format(char c, va_list arguments)
 {
@@ -27,9 +27,9 @@ int	ft_format(char c, va_list arguments)
 	else if (c == 'p')
 		return (ft_digits_base(va_arg(arguments, unsigned long int)));
 	else if (c == 'x')
-		return (ft_digits_x(va_arg(arguments, long long int)));
+		return (ft_digits_x(va_arg(arguments, unsigned int)));
 	else if (c == 'X')
-		return (ft_digits_cx(va_arg(arguments, long long int)));
+		return (ft_digits_cx(va_arg(arguments, unsigned int)));
 	return (0);
 }
 

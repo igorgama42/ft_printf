@@ -6,11 +6,11 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 20:01:45 by igama             #+#    #+#             */
-/*   Updated: 2023/11/26 09:45:34 by igama            ###   ########.fr       */
+/*   Updated: 2023/11/28 08:58:59 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *c)
 {

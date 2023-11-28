@@ -6,13 +6,13 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 09:55:28 by igama             #+#    #+#             */
-/*   Updated: 2023/11/27 13:51:31 by igama            ###   ########.fr       */
+/*   Updated: 2023/11/28 08:57:49 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_putx(long long int n)
+void	ft_putx(unsigned long int n)
 {
 	const char	array[16] = {"0123456789abcdef"};
 
@@ -21,21 +21,16 @@ void	ft_putx(long long int n)
 		ft_putx(n / 16);
 		ft_putx(n % 16);
 	}
-	if (n >= 0 && n <= 15)
+	if (n <= 15)
 		ft_putchar(array[n]);
 }
 
-long long int	ft_digits_x(long long int n)
+unsigned long int	ft_digits_x(unsigned long int n)
 {
 	int	n_digits;
 
 	n_digits = 0;
 	ft_putx(n);
-	if (n < 0)
-	{
-		n *= -1;
-		n_digits++;
-	}
 	while (n > 0)
 	{
 		n /= 16;
