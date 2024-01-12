@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:03:49 by igama             #+#    #+#             */
-/*   Updated: 2023/11/28 10:25:34 by igama            ###   ########.fr       */
+/*   Updated: 2023/11/28 22:04:09 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void				ft_putnbr_base(unsigned long int n);
 unsigned long int	ft_digits_base(unsigned long int n);
 int					ft_printf(const char *str, ...);
 int					ft_putstr(char *c);
-char				*ft_strdup(const char *s);
 size_t				ft_strlen(const char *s);
 void				ft_putx(unsigned long int n);
 unsigned long int	ft_digits_x(unsigned long int n);

@@ -3,7 +3,7 @@ NAME = libftprintf.a
 
 # Function files
 SRCS =  ft_printf.c ft_putnbr.c ft_putstr.c ft_putchar.c
-SRCS += ft_putnbr_uns.c ft_strdup.c ft_putnbr_base.c
+SRCS += ft_putnbr_uns.c ft_putnbr_base.c
 SRCS += ft_putx.c ft_put_cx.c
 
 # Function Objects

@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:06:36 by igama             #+#    #+#             */
-/*   Updated: 2023/11/28 08:58:34 by igama            ###   ########.fr       */
+/*   Updated: 2023/11/28 22:02:27 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,31 +52,3 @@ int	ft_digits(int n)
 	}
 	return (n_digits);
 }
-
-/*char	*ft_itoa(int n)
-{
-	char	*str;
-	int		size;
-
-	if (n == 0)
-		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	size = digits(n);
-	str = (char *)malloc(sizeof(char) * (size + 1));
-	if (!str)
-		return (0);
-	if (n < 0)
-	{
-		str[0] = '-';
-		n *= -1;
-	}
-	str[size] = '\0';
-	while (n > 0)
-	{
-		str[size - 1] = n % 10 + '0';
-		n /= 10;
-		size--;
-	}
-	return (str);
-}*/
